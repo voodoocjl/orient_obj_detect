@@ -4,6 +4,7 @@ _base_ = [
 ]
 
 angle_version = 'le90'
+device = 'cpu'
 gpu_number = 8
 # fp16 = dict(loss_scale='dynamic')
 # custom_imports = dict(
