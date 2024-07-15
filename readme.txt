@@ -15,6 +15,7 @@ pip install -v -e .
 cd ~
 git clone https://github.com/voodoocjl/orient_obj_detect.git
 cd orient_obj_detect
+chmod +x run.sh
 ./run.sh
 
 训练：
