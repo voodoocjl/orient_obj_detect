@@ -15,11 +15,11 @@ cp change/dist_utils.py ~/anaconda3/envs/openmmlab/lib/python3.8/site-packages/m
 # 复制 util_distribution.py
 cp change/util_distribution.py ~/mmrotate/mmrotate/utils/util_distribution.py
 
-cp -r mmrotate/ ../mmrotate/
+cp -r mmrotate/ ~/mmrotate/
 
-cp -r models/ ../mmrotate/
+cp -r models/ ~/mmrotate/
 
-cp -r mmcv_custom/ ../mmrotate
+cp -r mmcv_custom/ ~/mmrotate
 
 pip install timm
 
