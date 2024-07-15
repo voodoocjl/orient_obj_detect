@@ -4,7 +4,7 @@ from mmcv.parallel import MMDataParallel, MMDistributedDataParallel
 
 dp_factory = {'cuda': MMDataParallel, 'cpu': MMDataParallel}
 
-ddp_factory = {'cuda': MMDistributedDataParallel}
+ddp_factory = {'cuda': MMDistributedDataParallel, 'cpu': MMDistributedDataParallel}
 
 
 def build_dp(model, device='cuda', dim=0, *args, **kwargs):
@@ -51,7 +51,7 @@ def build_ddp(model, device='cuda', *args, **kwargs):
         .. [1] https://pytorch.org/docs/stable/generated/torch.nn.parallel.
                      DistributedDataParallel.html
     """
-    assert device in ['cuda', 'npu'], 'Only available for cuda or npu devices.'
+    # assert device in ['cuda', 'npu'], 'Only available for cuda or npu devices.'
     if device == 'npu':
         from mmcv.device.npu import NPUDistributedDataParallel        
         torch.npu.set_compile_mode(jit_compile=False)
@@ -59,7 +59,11 @@ def build_ddp(model, device='cuda', *args, **kwargs):
         model = model.npu()
     elif device == 'cuda':
         model = model.cuda()
+    else:
+        return ddp_factory['cpu'](model, device_ids=None)
 
+    # print(*args)
+    # print(*kwargs)
     return ddp_factory[device](model, *args, **kwargs)
 
 

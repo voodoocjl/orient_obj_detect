@@ -12,9 +12,6 @@ cp change/distributed_mmcv.py ~/anaconda3/envs/openmmlab/lib/python3.8/site-pack
 # 复制 dist_utils.py 文件
 cp change/dist_utils.py ~/anaconda3/envs/openmmlab/lib/python3.8/site-packages/mmcv/runner/dist_utils.py
 
-# 复制 util_distribution.py
-cp change/util_distribution.py ~/mmrotate/mmrotate/utils/util_distribution.py
-
 cp -r mmrotate/ ~/mmrotate/
 
 cp -r models/ ~/mmrotate/
