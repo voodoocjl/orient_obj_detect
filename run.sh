@@ -7,7 +7,7 @@ cp change/test.py ~/anaconda3/envs/openmmlab/lib/python3.8/site-packages/mmdet/a
 cp change/distributed.py ~/anaconda3/envs/openmmlab/lib/python3.8/site-packages/torch/nn/parallel/distributed.py
 
 # 复制 distributed_mmcv.py 文件并重命名为 distributed.py
-cp change/distributed_mmcv.py ~/anaconda3/envs/openmmlab/lib/python3.8/site-packages/mmcv/parallel/distributed.py distributed.py
+cp change/distributed_mmcv.py ~/anaconda3/envs/openmmlab/lib/python3.8/site-packages/mmcv/parallel/distributed.py
 
 # 复制 dist_utils.py 文件
 cp change/dist_utils.py ~/anaconda3/envs/openmmlab/lib/python3.8/site-packages/mmcv/runner/dist_utils.py
@@ -15,9 +15,11 @@ cp change/dist_utils.py ~/anaconda3/envs/openmmlab/lib/python3.8/site-packages/m
 # 复制 util_distribution.py
 cp change/util_distribution.py ~/mmrotate/mmrotate/utils/util_distribution.py
 
-cp -r mmrotate/ ./mmrotate/
+cp -r mmrotate/ ../mmrotate/
 
-cp -r models/ ./mmrotate/
+cp -r models/ ../mmrotate/
+
+cp -r mmcv_custom/ ../mmrotate
 
 pip install timm
 
