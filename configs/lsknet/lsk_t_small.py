@@ -18,7 +18,7 @@ model = dict(
         drop_rate=0.1,
         drop_path_rate=0.1,
         depths=[3, 3, 5, 2],
-        init_cfg=dict(type='Pretrained', checkpoint="checkpoints/lsk_t_fpn_1x_dota_le90.pth"),
+        init_cfg=dict(type='Pretrained', checkpoint="checkpoints/lsk_t_backbone.pth"),
         norm_cfg=dict(type='BN', requires_grad=True)),
     neck=dict(
         type='FPN',
